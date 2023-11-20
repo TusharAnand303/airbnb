@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import Container from '../Container'
 import Logo from './Logo'
@@ -10,7 +12,7 @@ const Navbar = () => {
     <div className='fixed w-full bg-white z-10 shadow-sm'>
       <div className='py-4 border-b-[1px]'>
         <Container>
-         <div className='flex flex-row items-center justify-between gap-3 md:gap-0'>
+         <div className='flex flex-row items-center justify-between gap-3 md:gap-0 px-3'>
           <Logo/>
           <Search/>
           <UserMenu/>

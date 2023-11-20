@@ -5,8 +5,11 @@ import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import Avatar from '../Avatar';
 import MenuItems from './MenuItems';
+import useRegisterModal from '@/app/hooks/useRegisterModal';
 
 const UserMenu: React.FC = () => {
+
+  const registerModal = useRegisterModal();
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -43,7 +46,7 @@ const UserMenu: React.FC = () => {
         </div>
         <div
           onClick={toggleOpen}
-          className='p-4 md:py-2 md:px-2 border-[1px] border-gray-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'
+          className='p-4 md:py-1 md:px-2 border-[1px] border-gray-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'
         >
           <AiOutlineMenu />
           <div className='hidden md:block'>
@@ -55,8 +58,8 @@ const UserMenu: React.FC = () => {
         <div className='absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden top-14 right-0 text-sm'>
           <div className='flex flex-col cursor-pointer'>
             <>
-              <MenuItems onClick={closeMenu} label='login' />
-              <MenuItems onClick={closeMenu} label='Signup' />
+              <MenuItems onClick={()=>{}} label='login' />
+              <MenuItems onClick={registerModal.onOpen} label='Signup' />
             </>
           </div>
         </div>
