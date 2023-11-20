@@ -40,7 +40,7 @@ const Input: React.FC<InputProps> = ({
         placeholder=""
         type={type}
         className={`
-      peer w-full p-2 pt-3 font-light bg-white border-2 rounded-md outline-none transition disabled:opacity-70 disabled:cursor-not-allowed ${
+      peer w-full p-2 pt-4 font-light bg-white border-2 rounded-md outline-none transition disabled:opacity-70 disabled:cursor-not-allowed ${
         formatPrice ? "pl-9" : "pl-4"
       } ${errors[id] ? "border-rose-500" : "border-neutral-300"}${
           errors[id] ? "focus:border-rose-500" : "focus:border-black"
@@ -48,13 +48,13 @@ const Input: React.FC<InputProps> = ({
       />
       <label
         className={`absolute text-md duration-150 transform -translate-y-3 top-[12px] z-10 origin-[0] ${
-          formatPrice ? "left-9" : "left-4"
+          formatPrice ? "left-9" : "left-[18px]"
         }
       peer-placeholder-shown:scale-100
       peer-placeholder-shown:translate-y-0
-      peer-focus:scale-75
+      peer-focus:scale-65
       peer-focus:-translate-y-3
-       ${errors[id] ? 'text-rose-500': 'text-zinc-400'}`}
+       ${errors[id] ? "text-rose-500" : "text-zinc-400"}`}
       >
         {label}
       </label>

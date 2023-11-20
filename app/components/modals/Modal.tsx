@@ -58,13 +58,6 @@ const Modal: React.FC<ModalProps> = ({
     secondaryAction();
   }, [disabled, secondaryAction]);
 
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Check if the click occurred outside the modal content
-    if (e.target === e.currentTarget) {
-      handleClose();
-    }
-  };
-
   if (!showModal) {
     return null;
   }
@@ -73,7 +66,6 @@ const Modal: React.FC<ModalProps> = ({
     <>
       <div
         className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-neutral-800/70"
-        onClick={handleOverlayClick}
       >
         <div className="relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 my-6 mx-auto h-[80%] md:h-auto lg:h-auto">
           {/* content  */}

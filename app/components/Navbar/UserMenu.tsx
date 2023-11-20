@@ -6,10 +6,12 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import Avatar from '../Avatar';
 import MenuItems from './MenuItems';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
+import useLoginModal from '@/app/hooks/userLoginModel';
 
 const UserMenu: React.FC = () => {
 
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -58,7 +60,7 @@ const UserMenu: React.FC = () => {
         <div className='absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden top-14 right-0 text-sm'>
           <div className='flex flex-col cursor-pointer'>
             <>
-              <MenuItems onClick={()=>{}} label='login' />
+              <MenuItems onClick={loginModal.onOpen} label='login' />
               <MenuItems onClick={registerModal.onOpen} label='Signup' />
             </>
           </div>
