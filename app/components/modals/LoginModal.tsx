@@ -18,6 +18,7 @@ import Button from "../Button";
 import useLoginModal from "@/app/hooks/userLoginModel";
 import {useRouter} from 'next/navigation';
 
+
 const LoginModal = () => {
   const router = useRouter();
   const registerModal = useRegisterModal();
@@ -86,18 +87,19 @@ const LoginModal = () => {
         outline
         label="Continue with Google"
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => signIn('google')}
       />
       <Button
         outline
         label="Continue with Github"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn('github')}
       />
       <div className="text-neutral-500 text-center mt-0 font-light ">
         <div className="justify-center flex flex-row item-center gap-2">
           <div>Don't have an account ? </div>
-          <div onClick={registerModal.onClose} className="text-neutral-800 cursor-pointer hover:underline hover:text-rose-500 transition duration-100">
+          <div onClick={registerModal.onClose} className="text-neutral-800 
+          cursor-pointer hover:underline hover:text-rose-500 transition duration-100">
             Register
           </div>
         </div>
