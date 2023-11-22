@@ -32,7 +32,7 @@ const LoginModal = () => {
     formState: { errors },
   } = useForm<FieldValues>({
     defaultValues: {
-      name: '',
+      email: '',
       password: '',
     },
   });
@@ -57,6 +57,11 @@ const LoginModal = () => {
     })
    
   };
+
+  const toggle = useCallback(()=>{
+    loginModal.onClose();
+    registerModal.onOpen();
+  },[loginModal, registerModal])
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
@@ -97,10 +102,10 @@ const LoginModal = () => {
       />
       <div className="text-neutral-500 text-center mt-0 font-light ">
         <div className="justify-center flex flex-row item-center gap-2">
-          <div>Don't have an account ? </div>
-          <div onClick={registerModal.onClose} className="text-neutral-800 
+          <div>First time using Airbnb ? </div>
+          <div onClick={toggle} className="text-neutral-800 
           cursor-pointer hover:underline hover:text-rose-500 transition duration-100">
-            Register
+            Create an account
           </div>
         </div>
       </div>

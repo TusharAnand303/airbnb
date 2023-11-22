@@ -5,3 +5,31 @@
 html,body:root{
     height: 100%;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #b9b9b9;
+    border-radius: 12px;
+
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b9b9b9;
+  }
+
+  .leaflet-bottom,
+  .leaflet-control,
+  .leaflet-pane,
+  .leaflet-top{
+    z-index: 0 !important;
+  }

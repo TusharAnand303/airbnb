@@ -29,8 +29,8 @@ const Input: React.FC<InputProps> = ({
     <div className="w-full relative">
       {formatPrice && (
         <FaRupeeSign
-          size={24}
-          className="text-gray-700 absolute top-5 left-2"
+          size={16}
+          className="text-gray-700 absolute top-[17px] left-2"
         />
       )}
       <input
