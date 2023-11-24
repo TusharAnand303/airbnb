@@ -12,8 +12,8 @@ import SearchModal from './components/modals/SearchModal'
 const nunito = Inter({subsets: ['latin'], weight:"400"})
 
 export const metadata: Metadata = {
-  title: 'Airbnb',
-  description: 'A irbnb clone using nextjs 14',
+  title: 'Airbnb || Clone',
+  description: 'Airbnb clone using nextjs 14',
 }
 
 export default async function RootLayout({
