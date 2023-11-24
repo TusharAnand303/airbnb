@@ -1,8 +1,7 @@
 "use client";
 
 import useCountries from "@/app/hooks/userCountries";
-import { SafeUser } from "@/app/types";
-import { Listing, Reservation } from "@prisma/client";
+import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 import { useRouter } from "next/navigation";
 import React, { useCallback, useMemo } from "react";
 import { format } from "date-fns";
@@ -11,8 +10,8 @@ import HeartButton from "../HeartButton";
 import Button from "../Button";
 
 interface ListingCardProps {
-  data: Listing;
-  reservation?: Reservation;
+  data: SafeListing;
+  reservation?: SafeReservation;
   onAction?: (id: string) => void;
   disabled?: boolean;
   actionLabel?: string;
@@ -60,7 +59,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
     const start = new Date(reservation.startDate);
     const end = new Date(reservation.endDate);
 
-    return `${format(start, "pp")} - ${format(end, "pp")}`;
+    return `${format(start, 'PP')} - ${format(end, 'PP')}`;
   }, [reservation]);
 
   return (
@@ -69,7 +68,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
       onClick={() => router.push(`/listings/${data.id}`)}
     >
       <div className="flex flex-col gap-2 w-full">
-        <div className="aspect-square w-ful relative overflow-hidden rounded-xl m-4">
+        <div className="aspect-square w-ful relative overflow-hidden rounded-xl m-4 md:m-0 xl:m-0 lg:m-0 2xl:m-0">
           <Image
             fill
             alt="Listings"
@@ -80,14 +79,14 @@ const ListingCard: React.FC<ListingCardProps> = ({
             <HeartButton listingId={data.id} currentUser={currentUser}/>
           </div>
         </div>
-        <div className="pl-4">
+        <div className="pl-4 md:pl-0 lg:pl-0 xl:pl-0 2xl:pl-0">
         <div className="font-semibold text-lg ">
             {location?.region},{" "}<span className="text-gray-500 text-md">{location?.label}</span>
         </div>
-        <div className="font-light text-neutral-500">
+        <div className="font-light text-neutral-500 mt-2 mb-2">
             { reservationDate || data.category}
         </div>
-        <div className="flex flex-row items-center gap-1">
+        <div className="flex flex-row items-center gap-1 mb-2">
             <div className="font-semibold">
                 ₹ {price} /-
             </div>
