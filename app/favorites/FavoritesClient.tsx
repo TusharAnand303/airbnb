@@ -1,3 +1,4 @@
+"use client"
 
 import { SafeListing, SafeUser } from '../types'
 import Container from '../components/Container';
